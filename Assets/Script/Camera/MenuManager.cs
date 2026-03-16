@@ -38,4 +38,10 @@ public class MenuManager : MonoBehaviour
         howToPlayMenu.SetActive(false);
         characterMenu.SetActive(true);
     }
+
+    public void ExitGame()
+    {
+        Debug.Log("Game Quit");
+        Application.Quit();
+    }
 }
