@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -43,5 +44,10 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Game Quit");
         Application.Quit();
+    }
+
+    public void StartCutScene()
+    {
+        SceneManager.LoadScene("CutScene");
     }
 }
