@@ -1,0 +1,99 @@
+;FBX 6.1.0 project file
+;Created by Tree IT
+
+FBXHeaderExtension:  {
+ FBXHeaderVersion: 1003
+ FBXVersion: 6100
+}
+
+Definitions:  {
+ Version: 100
+ Count: 3
+ ObjectType: "Model" {
+  Count: 1
+ }
+ ObjectType: "Geometry" {
+  Count: 1
+ }
+ ObjectType: "Texture" {
+  Count: 1
+ }
+}
+
+Objects: {
+ Model: "Model::Tree_0", "Mesh" {
+  Version: 232
+  MultiLayer: 0
+  MultiTake: 1
+  Shading: Y
+  Culling: "CullingOn"
+  Vertices: -208.42757,780.49579,25.79617,284.01822,780.49579,25.79617,-208.42757,620.15491,18.54379,284.01822,620.15491,18.54379,80.51862,869.57422,29.82528,-0.85910,-21.20915,-10.46574,72.38084,780.49579,211.08461,72.38084,780.49579,-236.49287,
+            57.73286,620.15491,211.08461,57.73286,620.15491,-236.49287,80.51862,869.57422,29.82528,-0.85910,-21.20915,-10.46574
+  PolygonVertexIndex: 1,0,-3,3,1,-3,1,4,-1,3,2,-6,7,6,-9,9,7,-9,7,10,-7,9,8,-12
+  GeometryVersion: 124
+  LayerElementNormal: 0 {
+   Version: 101
+   Name: ""
+   MappingInformationType: "ByVertice"
+   ReferenceInformationType: "Direct"
+   Normals: -0.30052,0.95262,0.04699,0.30052,0.95262,0.04699,-0.36861,0.92841,0.04678,0.36861,0.92841,0.04678,0.04901,0.99761,0.04879,-0.87557,-0.48042,0.05070,0.04256,0.96040,0.27537,0.04256,0.96040,-0.27537,
+            0.03023,0.94020,0.33928,0.03023,0.94020,-0.33928,0.04901,0.99761,0.04879,-0.87557,-0.48042,0.05070
+  }
+  LayerElementColor: 0 {
+   Version: 101
+   Name: ""
+   MappingInformationType: "ByPolygonVertex"
+   ReferenceInformationType: "IndexToDirect"
+   Colors: 0.00392,0.00000,0.00000,1.00000,0.00392,0.00000,0.00000,1.00000,0.00392,0.00000,0.00000,1.00000,0.00392,0.00000,0.00000,1.00000,0.00392,0.00000,0.00000,1.00000,0.00392,0.00000,0.00000,1.00000,0.00392,0.00000,0.00000,1.00000,0.00392,0.00000,0.00000,1.00000,
+           0.00392,0.00000,0.00000,1.00000,0.00392,0.00000,0.00000,1.00000,0.00392,0.00000,0.00000,1.00000,0.00392,0.00000,0.00000,1.00000
+  ColorIndex: 1,0,2,3,1,2,1,4,0,3,2,5,7,6,8,9,7,8,7,10,6,9,8,11
+  }
+  LayerElementUV: 0 {
+   Version: 101
+   Name: ""
+   MappingInformationType: "ByVertice"
+   ReferenceInformationType: "Direct"
+   UV: 0.66667,0.96667,0.83333,0.96667,0.66667,0.90667,0.83333,0.90667,0.76750,1.00000,0.73417,0.66667,1.00000,0.96667,0.83333,0.96667,1.00000,0.90667,0.83333,0.90667,0.93250,1.00000,0.91750,0.66667
+  }
+  LayerElementTexture: 0 {
+   Version: 101
+   Name: ""
+   MappingInformationType: "AllSame"
+   ReferenceInformationType: "IndexToDirect"
+   TextureId: 0
+  }
+  Layer: 0 {
+   Version: 100
+   LayerElement: {
+    Type: "LayerElementNormal"
+    TypedIndex: 0
+   }
+   LayerElement: {
+    Type: "LayerElementColor"
+    TypedIndex: 0
+   }
+   LayerElement: {
+    Type: "LayerElementUV"
+    TypedIndex: 0
+   }
+   LayerElement: {
+    Type: "LayerElementTexture"
+    TypedIndex: 0
+   }
+  }
+ }
+ Texture: "Texture::_", "" {
+  Version: 202
+  TextureName: "Texture::_"
+  FileName: ""
+  RelativeFilename: ""
+  ModelUVTranslation: 0,0
+  ModelUVScaling: 1,1
+ }
+}
+
+Connections: {
+ Connect: "OO", "Model::Tree_0", "Model::Scene"
+ Connect: "OO", "Texture::_", "Model::Tree_0"
+}
+
