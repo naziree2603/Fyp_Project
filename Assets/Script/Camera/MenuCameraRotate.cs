@@ -5,6 +5,7 @@ public class MenuCameraRotate : MonoBehaviour
     public Transform mainMenuView;
     public Transform settingsView;
     public Transform characterSelectionView;
+    public Transform howToPlayView;
 
     public float speed = 3f;
 
@@ -34,5 +35,10 @@ public class MenuCameraRotate : MonoBehaviour
     public void GoToCharacterSelection()
     {
         target = characterSelectionView;
+    }
+
+    public void GoToHowToPlay()
+    {
+        target = howToPlayView;
     }
 }
