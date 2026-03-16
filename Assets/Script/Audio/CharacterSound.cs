@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CharacterSound : MonoBehaviour
@@ -21,4 +22,5 @@ public class CharacterSound : MonoBehaviour
     {
         audioSource.PlayOneShot(hero3);
     }
+
 }

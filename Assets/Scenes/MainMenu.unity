@@ -12233,6 +12233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1544609362}
+  - component: {fileID: 1544609363}
   m_Layer: 7
   m_Name: CharacterSelection
   m_TagString: Untagged
@@ -12258,6 +12259,19 @@ Transform:
   - {fileID: 2070715403124787918}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -106.032, z: 0}
+--- !u!114 &1544609363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544609361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5f7fdcb3c3d7a4593bbccc511ad74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioUnmute
+  audioSource: {fileID: 8369737515540112773}
 --- !u!1001 &1559482738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19762,6 +19776,7 @@ GameObject:
   - component: {fileID: 8369737515540112771}
   - component: {fileID: 8369737515540112772}
   - component: {fileID: 8369737515540112773}
+  - component: {fileID: 8369737515540112774}
   m_Layer: 7
   m_Name: MalayGirlHolder
   m_TagString: Player
@@ -21707,11 +21722,11 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: b7bad5716162cf5409b73399643a709e, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -21792,6 +21807,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8369737515540112774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5441359654748084949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e9121e841808b42a8ccbfb563ce7f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSound
+  audioSource: {fileID: 8369737515540112773}
+  hero1: {fileID: 0}
+  hero2: {fileID: 0}
+  hero3: {fileID: 0}
 --- !u!1 &8374582577006995083
 GameObject:
   m_ObjectHideFlags: 0
