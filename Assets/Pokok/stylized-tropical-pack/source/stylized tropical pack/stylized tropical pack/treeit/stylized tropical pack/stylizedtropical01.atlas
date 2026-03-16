@@ -1,0 +1,156 @@
+Texture Size X=1536
+Texture Size Y=1536
+{
+Color=resources\palm bark.png
+Normal=resources\palm bark_normal.png
+Roughness=resources\palm bark_roughness.png
+Transmission=
+Size X=512.0000
+Size Y=1536.0000
+Position X=256.0000
+Position Y=768.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=resources\coconut.png
+Normal=resources\coconut_normal.png
+Roughness=resources\coconut_roughness.png
+Transmission=
+Size X=352.0000
+Size Y=192.0000
+Position X=784.0000
+Position Y=1120.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=resources\grass billboard.png
+Normal=resources\grass billboard_normal.png
+Roughness=resources\grass billboard_roughness.png
+Transmission=resources\grass billboard_transmission.png
+Size X=352.0000
+Size Y=320.0000
+Position X=784.0000
+Position Y=1376.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=resources\grass.png
+Normal=resources\grass_normal.png
+Roughness=resources\grass_roughness.png
+Transmission=resources\grass_transmission.png
+Size X=64.0000
+Size Y=512.0000
+Position X=992.0000
+Position Y=1280.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=resources\stem 01.png
+Normal=resources\stem 01_normal.png
+Roughness=resources\stem 01_roughness.png
+Transmission=
+Size X=48.0000
+Size Y=512.0000
+Position X=584.0000
+Position Y=1280.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=resources\stem 02.png
+Normal=
+Roughness=
+Transmission=
+Size X=48.0000
+Size Y=512.0000
+Position X=536.0000
+Position Y=1280.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=resources\fern.png
+Normal=resources\fern_normal.png
+Roughness=resources\fern_roughness.png
+Transmission=resources\fern_transmission.png
+Size X=256.0000
+Size Y=512.0000
+Position X=1280.0000
+Position Y=1024.0000
+Angle=270.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=resources\banana leaf.png
+Normal=resources\banana leaf_normal.png
+Roughness=resources\banana leaf_roughness.png
+Transmission=resources\banana leaf_transmission.png
+Size X=512.0000
+Size Y=512.0000
+Position X=768.0000
+Position Y=768.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=resources\bush.png
+Normal=resources\bush_normal.png
+Roughness=resources\bush_roughness.png
+Transmission=resources\bush_transmission.png
+Size X=512.0000
+Size Y=384.0000
+Position X=1280.0000
+Position Y=1344.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=resources\palm leaf.png
+Normal=resources\palm leaf_normal.png
+Roughness=resources\palm leaf_roughness.png
+Transmission=resources\palm leaf_transmission.png
+Size X=1024.0000
+Size Y=512.0000
+Position X=1024.0000
+Position Y=256.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=resources\monstera.png
+Normal=resources\monstera_normal.png
+Roughness=resources\monstera_roughness.png
+Transmission=resources\monstera_transmission.png
+Size X=512.0000
+Size Y=384.0000
+Position X=1280.0000
+Position Y=704.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}

@@ -1,0 +1,170 @@
+Texture Size X=1536
+Texture Size Y=1536
+{
+Color=banana plant 01\banana plant 01_lod5.png
+Normal=banana plant 01\banana plant 01_lod5_normal.png
+Roughness=banana plant 01\banana plant 01_lod5_roughness.png
+Transmission=banana plant 01\banana plant 01_lod5_transmission.png
+Size X=512.0000
+Size Y=512.0000
+Position X=256.0000
+Position Y=256.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=banana plant 02\banana plant 02_lod5.png
+Normal=banana plant 02\banana plant 02_lod5_normal.png
+Roughness=banana plant 02\banana plant 02_lod5_roughness.png
+Transmission=banana plant 02\banana plant 02_lod5_transmission.png
+Size X=352.0000
+Size Y=512.0000
+Position X=1360.0000
+Position Y=1280.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=bush 01\bush 01_lod5.png
+Normal=bush 01\bush 01_lod5_normal.png
+Roughness=bush 01\bush 01_lod5_roughness.png
+Transmission=bush 01\bush 01_lod5_transmission.png
+Size X=240.0000
+Size Y=512.0000
+Position X=728.0000
+Position Y=1280.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=coconut palm 01\coconut palm 01_lod5.png
+Normal=coconut palm 01\coconut palm 01_lod5_normal.png
+Roughness=coconut palm 01\coconut palm 01_lod5_roughness.png
+Transmission=coconut palm 01\coconut palm 01_lod5_transmission.png
+Size X=512.0000
+Size Y=512.0000
+Position X=768.0000
+Position Y=768.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=coconut palm 02\coconut palm 02_lod5.png
+Normal=coconut palm 02\coconut palm 02_lod5_normal.png
+Roughness=coconut palm 02\coconut palm 02_lod5_roughness.png
+Transmission=coconut palm 02\coconut palm 02_lod5_transmission.png
+Size X=512.0000
+Size Y=512.0000
+Position X=1280.0000
+Position Y=256.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=coconut palm 03\coconut palm 03_lod5.png
+Normal=coconut palm 03\coconut palm 03_lod5_normal.png
+Roughness=coconut palm 03\coconut palm 03_lod5_roughness.png
+Transmission=coconut palm 03\coconut palm 03_lod5_transmission.png
+Size X=512.0000
+Size Y=512.0000
+Position X=1280.0000
+Position Y=768.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=coconut palm 04\coconut palm 04_lod5.png
+Normal=coconut palm 04\coconut palm 04_lod5_normal.png
+Roughness=coconut palm 04\coconut palm 04_lod5_roughness.png
+Transmission=coconut palm 04\coconut palm 04_lod5_transmission.png
+Size X=512.0000
+Size Y=512.0000
+Position X=768.0000
+Position Y=256.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=fern 01\fern 01_lod5.png
+Normal=fern 01\fern 01_lod5_normal.png
+Roughness=fern 01\fern 01_lod5_roughness.png
+Transmission=fern 01\fern 01_lod5_transmission.png
+Size X=384.0000
+Size Y=512.0000
+Position X=416.0000
+Position Y=1280.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=fern 02\fern 02_lod5.png
+Normal=fern 02\fern 02_lod5_normal.png
+Roughness=fern 02\fern 02_lod5_roughness.png
+Transmission=fern 02\fern 02_lod5_transmission.png
+Size X=224.0000
+Size Y=272.0000
+Position X=112.0000
+Position Y=1160.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=grass 01\grass 01_lod5.png
+Normal=grass 01\grass 01_lod5_normal.png
+Roughness=grass 01\grass 01_lod5_roughness.png
+Transmission=grass 01\grass 01_lod5_transmission.png
+Size X=224.0000
+Size Y=240.0000
+Position X=112.0000
+Position Y=1416.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=monstera 01\monstera 01_lod5.png
+Normal=monstera 01\monstera 01_lod5_normal.png
+Roughness=monstera 01\monstera 01_lod5_roughness.png
+Transmission=monstera 01\monstera 01_lod5_transmission.png
+Size X=512.0000
+Size Y=512.0000
+Position X=256.0000
+Position Y=768.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
+{
+Color=monstera 02\monstera 02_lod5.png
+Normal=monstera 02\monstera 02_lod5_normal.png
+Roughness=monstera 02\monstera 02_lod5_roughness.png
+Transmission=monstera 02\monstera 02_lod5_transmission.png
+Size X=336.0000
+Size Y=512.0000
+Position X=1016.0000
+Position Y=1280.0000
+Angle=0.0000
+Alpha Mask=1
+Vertical Wrap=0
+Wrap Value=1
+}
