@@ -26,9 +26,10 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private GameObject Orb;
 
     private enemyProjectile enemySpell;
+    private enemyHealth enemyHealth;
 
-    
-   
+
+
 
 
     void Start()
@@ -36,11 +37,14 @@ public class EnemyAi : MonoBehaviour
         
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
+        enemyHealth = GetComponent<enemyHealth>();
     }
 
   
     void Update()
     {
+        if (!enemyHealth.IsAlive) return;
+        
         if (playerTransform == null)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
