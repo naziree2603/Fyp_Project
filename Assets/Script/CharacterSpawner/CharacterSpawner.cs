@@ -1,5 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using Unity.Cinemachine;
+using UnityEngine.UI;
 
 public class CharacterSpawner : MonoBehaviour
 {
@@ -16,15 +17,28 @@ public class CharacterSpawner : MonoBehaviour
             transform.rotation
         );
 
-        // find the CameraFollow object inside the player
+        // 🎥 Camera setup
         Transform cameraTarget = player.transform.Find("CameraFollow");
 
-        // assign camera follow
         cineCamera.Follow = cameraTarget;
         cineCamera.LookAt = cameraTarget;
 
-        // assign camera to movement script
+        // 🎮 Movement setup
         PlayerMovement movement = player.GetComponent<PlayerMovement>();
         movement.SetCamera(Camera.main.transform);
+
+        // 🔥 NEW: Connect Slider to EnemyHealthBarManager
+        Slider slider = player.GetComponentInChildren<Slider>();
+
+        EnemyHealthBarManager manager = FindObjectOfType<EnemyHealthBarManager>();
+
+        if (manager != null && slider != null)
+        {
+            manager.SetSlider(slider);
+        }
+        else
+        {
+            Debug.LogWarning("Slider or EnemyHealthBarManager not found!");
+        }
     }
 }
