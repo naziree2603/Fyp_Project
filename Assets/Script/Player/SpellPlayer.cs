@@ -9,6 +9,7 @@ public class SpellPlayer : MonoBehaviour
     [SerializeField] private int speed = 20;
     private Vector3 direction;
     [SerializeField] private GameObject hitEffect;
+    [SerializeField] private int damage = 10;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -23,6 +24,7 @@ public class SpellPlayer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        collision.gameObject.GetComponent<enemyHealth>().TakeDamage(damage);
         Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
