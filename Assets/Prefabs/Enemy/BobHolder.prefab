@@ -397,6 +397,7 @@ GameObject:
   - component: {fileID: 1867610110603377385}
   - component: {fileID: 4895652478054191171}
   - component: {fileID: 6028086329070505597}
+  - component: {fileID: 6024234018086861040}
   m_Layer: 6
   m_Name: BobHolder
   m_TagString: Untagged
@@ -456,6 +457,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::enemyHealth
   maxHealth: 150
+  currentHealth: 0
+  IsAlive: 1
+  deathSounds:
+  - {fileID: 8300000, guid: b90f6041b62ed7c45a0fed071c2ea2cc, type: 3}
+  CoolDownSound: 3
 --- !u!114 &1867610110603377385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,7 +520,7 @@ MonoBehaviour:
   stopDistance: 2
   AttackCoolDown: 2
   attackPoint: {fileID: 549511573654589199}
-  attackRange: 1.6
+  attackRange: 2.1
   playersLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -522,6 +528,111 @@ MonoBehaviour:
   WaitTimeMelee: 0.5
   isMage: 0
   Orb: {fileID: 0}
+  attackSounds:
+  - {fileID: 8300000, guid: d4d5d826c4db60645bc1a0689afd3300, type: 3}
+  chaseSounds:
+  - {fileID: 8300000, guid: 43421911c63d66b44b557af613d8f1af, type: 3}
+  - {fileID: 8300000, guid: 137caca9115c31b409a5a4a55bce4366, type: 3}
+  swordSounds: {fileID: 8300000, guid: 3de200f055aed1b4694f794408d0b10f, type: 3}
+  magicSounds: {fileID: 0}
+  CoolDownSound: 5
+--- !u!82 &6024234018086861040
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2615056074591189958}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2652210940140183893
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +916,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4089150077488134878}
@@ -923,14 +1034,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4618909115385053098}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.16124602, y: 0.9330836, z: -0.27788496, w: 0.16166258}
-  m_LocalPosition: {x: -0.098, y: 0.234, z: 0.258}
+  m_LocalRotation: {x: -0.07015587, y: 0.7339963, z: -0.17473105, w: 0.65253097}
+  m_LocalPosition: {x: -0.35920358, y: 0.12858498, z: 0.004674718}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 549511573654589199}
   m_Father: {fileID: 8403130758375479965}
-  m_LocalEulerAnglesHint: {x: 152.196, y: -26.255981, z: 153.784}
+  m_LocalEulerAnglesHint: {x: 170.506, y: -84.91901, z: 160.39}
 --- !u!33 &6920594635832618019
 MeshFilter:
   m_ObjectHideFlags: 0
