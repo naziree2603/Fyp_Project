@@ -14,12 +14,19 @@ public class enemyHealth : MonoBehaviour
     private EnemyHealthbarManager enemyHealthManager;
     private Coroutine hideHealthBarCoroutine;
 
+    private AudioSource audio;
+    [SerializeField] private AudioClip[] deathSounds;
+    
+    private float soundTimer;
+    [SerializeField] private float CoolDownSound = 3f;
+
     private void Start()
     {
         currentHealth = maxHealth;
         anim = GetComponentInChildren<Animator>();
         IsAlive = true;
         enemyHealthManager = FindFirstObjectByType<EnemyHealthbarManager>();
+        audio = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int damage)
@@ -48,6 +55,12 @@ public class enemyHealth : MonoBehaviour
 
     }
 
+    private void PlaySounds(AudioClip[] sounds)
+    {
+        int randomIndex = Random.Range(0, sounds.Length);
+        audio.PlayOneShot(sounds[randomIndex]);
+    }
+
     private void EnemyDeath()
     {
         IsAlive = false;
@@ -56,9 +69,11 @@ public class enemyHealth : MonoBehaviour
         {
             StopCoroutine(HideHealthBarDelay());
         }
+
+        PlaySounds(deathSounds);
         enemyHealthManager.HideHealthBar();
         anim.SetTrigger("Death");
-        Invoke("DisableEnemy", 3f); // Delay to allow death animation to play
+        Invoke("DisableEnemy", 5f); // Delay to allow death animation to play
     }
 
     private IEnumerator HideHealthBarDelay()

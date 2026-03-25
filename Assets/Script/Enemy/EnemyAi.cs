@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.Android;
+using Random = UnityEngine.Random;
 
 public class EnemyAi : MonoBehaviour
 {
@@ -27,6 +29,13 @@ public class EnemyAi : MonoBehaviour
 
     private enemyProjectile enemySpell;
     private enemyHealth enemyHealth;
+    private AudioSource audio;
+    [SerializeField] private AudioClip[] attackSounds;
+    [SerializeField] private AudioClip[] chaseSounds;
+    [SerializeField] private AudioClip swordSounds;
+    [SerializeField] private AudioClip magicSounds;
+    private float soundTimer;
+    [SerializeField] private float CoolDownSound = 3f;  
 
 
 
@@ -38,6 +47,8 @@ public class EnemyAi : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
         enemyHealth = GetComponent<enemyHealth>();
+        audio = GetComponent<AudioSource>();
+        soundTimer = CoolDownSound; // Initialize sound timer to allow immediate sound play
     }
 
   
@@ -55,6 +66,7 @@ public class EnemyAi : MonoBehaviour
         }
 
         timer += Time.deltaTime;
+        soundTimer += Time.deltaTime;
         float distance = Vector3.Distance(playerTransform.position, transform.position);
         if(distance <= stopDistance)
         {
@@ -64,7 +76,14 @@ public class EnemyAi : MonoBehaviour
             if(timer >= AttackCoolDown)
             {
                 anim.SetTrigger("Attack1");
-                if(!isMage)
+
+                if (soundTimer >= CoolDownSound)
+                    {
+                        PlaySounds(attackSounds);
+                        soundTimer = 0; // Reset sound timer after playing sound
+                }
+
+                if (!isMage)
                 {
                     Invoke("MeleeAttack", WaitTimeMelee);
                 }
@@ -82,6 +101,12 @@ public class EnemyAi : MonoBehaviour
             agent.isStopped = false;
             agent.SetDestination(playerTransform.position);
             anim.SetBool("Run", true);
+
+            if (soundTimer >= CoolDownSound)
+            {
+                PlaySounds(chaseSounds);
+                soundTimer = 0; // Reset sound timer after playing sound
+            }
         }
         else
         {
@@ -90,10 +115,19 @@ public class EnemyAi : MonoBehaviour
         }
 
 
+
+
+    }
+
+    private void PlaySounds(AudioClip[] sounds)
+    {
+        int randomIndex = Random.Range(0, sounds.Length);
+        audio.PlayOneShot(sounds[randomIndex]);
     }
 
     private void MeleeAttack()
     {
+        audio.PlayOneShot(swordSounds);
         Collider[] players = Physics.OverlapSphere(attackPoint.position, attackRange, playersLayer);
         foreach (Collider target in players)
         {
@@ -103,6 +137,7 @@ public class EnemyAi : MonoBehaviour
 
     private void MagicAttack()
     {
+        audio.PlayOneShot(magicSounds);
         GameObject orbObject = Instantiate(Orb, attackPoint.position, Quaternion.identity);
 
         enemySpell = orbObject.GetComponent<enemyProjectile>();
