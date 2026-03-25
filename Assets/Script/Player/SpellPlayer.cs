@@ -24,7 +24,13 @@ public class SpellPlayer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        collision.gameObject.GetComponent<enemyHealth>().TakeDamage(damage);
+        enemyHealth enemy = collision.gameObject.GetComponent<enemyHealth>();
+
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
+
         Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
