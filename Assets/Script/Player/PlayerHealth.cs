@@ -28,6 +28,8 @@ public class PlayerHealth : MonoBehaviour
         
     }
 
+
+
     private void Death()
     {
         isAlive = false;
