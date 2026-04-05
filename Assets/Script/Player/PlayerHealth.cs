@@ -9,17 +9,29 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     public int CurrentHealth;
     public bool isAlive = true;
+
+    public int ShieldValue;
     void Start()
     {
         HealthSlider.maxValue = maxHealth;
         CurrentHealth = maxHealth;
         HealthSlider.value = CurrentHealth;
+        UpdateDefenceValue();
+    }
+
+    public void UpdateDefenceValue()
+    {
+        ShieldValue = InventoryManager.instance.GetShieldValue();  
+        //Debug.Log("Shield Value: " + ShieldValue);
     }
 
     public void TakeDamage(int dmg)
     {
         if (!isAlive) return;
-        CurrentHealth = Mathf.Max(CurrentHealth - dmg, 0);
+
+        int totalDefence = ShieldValue;
+        int finalDamage = Mathf.Max(dmg - totalDefence, 0);
+        CurrentHealth = Mathf.Max(CurrentHealth - finalDamage, 0);
         HealthSlider.value = CurrentHealth;
         if (CurrentHealth <= 0)
         {

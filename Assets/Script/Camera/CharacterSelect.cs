@@ -39,6 +39,9 @@ public class CharacterSelect : MonoBehaviour
     public void SelectCharacter()
     {
         PlayerPrefs.SetInt("SelectedCharacter", currentCharacter);
+
+        PlayerPrefs.SetInt("IsNewGame", 1);
+
         UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
     }
 }

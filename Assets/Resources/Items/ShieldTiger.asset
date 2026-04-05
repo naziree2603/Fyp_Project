@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd620278bb6ec14686897f0fd32f8e0, type: 3}
+  m_Name: ShieldTiger
+  m_EditorClassIdentifier: Assembly-CSharp::Items
+  ID: 7
+  ItemSprite: {fileID: 21300000, guid: 303318ec2b90acc41b8df3500a8370db, type: 3}
+  ItemPrefab: {fileID: 6496718886976508372, guid: d32d2cd4f1dfb244f99cad99cd4ab83c, type: 3}
+  value: 40
+  itemType: 1

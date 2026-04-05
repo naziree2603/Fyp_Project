@@ -420,7 +420,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3149455736672644489}
+  - {fileID: 4294448593584368319}
   - {fileID: 4991911671559738173}
   - {fileID: 4420615230099396620}
   - {fileID: 4029371017501563192}
@@ -1263,7 +1263,6 @@ GameObject:
   - component: {fileID: 8069228106260150263}
   - component: {fileID: 2159736352303471768}
   - component: {fileID: 3820009455062199108}
-  - component: {fileID: 8492087637806389641}
   m_Layer: 7
   m_Name: IndiaManHolder
   m_TagString: Player
@@ -1378,6 +1377,7 @@ MonoBehaviour:
   maxHealth: 100
   CurrentHealth: 0
   isAlive: 1
+  ShieldValue: 0
 --- !u!114 &8069228106260150263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,7 +1412,7 @@ MonoBehaviour:
   meleeSound3: {fileID: 8300000, guid: dc6308b28c16ded4b8b3c91390475b49, type: 3}
   meleeSound4: {fileID: 8300000, guid: 76bff7a810ec07b498ca12348eb80dfc, type: 3}
   meleeCoolDown: 0.4
-  MeleePoint: {fileID: 3149455736672644489}
+  MeleePoint: {fileID: 0}
   MeleeRange: 0.7
   enemyLayers:
     serializedVersion: 2
@@ -1518,18 +1518,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8492087637806389641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2784516141083719288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce013325ca9ac44fad1111c65f63d62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LockCursor
 --- !u!1 &2810003323715408512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,6 +1708,51 @@ Transform:
   - {fileID: 2600545889803318901}
   m_Father: {fileID: 5360673935276845868}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3913231972148133395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6270115880603212882}
+  - component: {fileID: 8234737696359776859}
+  m_Layer: 7
+  m_Name: ShieldPlace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6270115880603212882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3913231972148133395}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.020829992, y: 0.7814059, z: 0.28085533, w: 0.55685836}
+  m_LocalPosition: {x: 0.032, y: -0.125, z: -0.077}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7626669046858333480}
+  m_LocalEulerAnglesHint: {x: -24.565, y: 104.132, z: 22.316}
+--- !u!114 &8234737696359776859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3913231972148133395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd3dfe16b42f1a4c9879b6495dfe524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EquipPoint
+  type: 1
 --- !u!1 &4026880393683809103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,96 +1975,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3697309648855587182}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5348849534563114754
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3149455736672644489}
-  - component: {fileID: 5324866463602192935}
-  - component: {fileID: 1457480628146633155}
-  m_Layer: 7
-  m_Name: KerisPanjang
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3149455736672644489
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5348849534563114754}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.14019188, y: -0.7069762, z: 0.07056816, w: -0.6896021}
-  m_LocalPosition: {x: -0.23074056, y: 0.004642886, z: 0.018113097}
-  m_LocalScale: {x: 0.49999994, y: 0.50000024, z: 0.5000003}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8373862757791395758}
-  m_LocalEulerAnglesHint: {x: -188.993, y: 14.091003, z: 197.35}
---- !u!33 &5324866463602192935
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5348849534563114754}
-  m_Mesh: {fileID: -4135286808072999568, guid: 57237d82b0458324d9ac315803921635, type: 3}
---- !u!23 &1457480628146633155
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5348849534563114754}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 3716907363064806258, guid: 57237d82b0458324d9ac315803921635, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5410603569601235223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,6 +2403,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6270115880603212882}
   - {fileID: 7580702714491628679}
   - {fileID: 5616471539798398928}
   - {fileID: 5198379393473401590}
@@ -3030,6 +2974,51 @@ Transform:
   - {fileID: 7794855249380998812}
   m_Father: {fileID: 4000847332799843435}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7784546154878744875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4294448593584368319}
+  - component: {fileID: 8163455848033571892}
+  m_Layer: 7
+  m_Name: SwordPlace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4294448593584368319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784546154878744875}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.04185527, y: -0.7717124, z: 0.007826427, w: 0.6345446}
+  m_LocalPosition: {x: -0.0223, y: -0.0075, z: 0.0223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8373862757791395758}
+  m_LocalEulerAnglesHint: {x: -2.352, y: -101.23, z: 4.278}
+--- !u!114 &8163455848033571892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784546154878744875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd3dfe16b42f1a4c9879b6495dfe524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EquipPoint
+  type: 0
 --- !u!1 &7841029499278624277
 GameObject:
   m_ObjectHideFlags: 0

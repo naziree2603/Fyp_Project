@@ -2,6 +2,7 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class PlayerAttack : MonoBehaviour
 
     private SpellPlayer spellPlayer;
 
+    private int SwordDamage;
+
 
     void Start()
     {
@@ -42,6 +45,7 @@ public class PlayerAttack : MonoBehaviour
         timer = meleeCoolDown;
 
         playerMovement = GetComponent<PlayerMovement>();
+        UpdateSwordDamage();
     }
 
     // Update is called once per frame
@@ -50,6 +54,12 @@ public class PlayerAttack : MonoBehaviour
         timer += Time.deltaTime;
         timer2 += Time.deltaTime;
         FaceTowardsClosestEnemy();
+    }
+
+    public void UpdateSwordDamage()
+    {
+        SwordDamage = InventoryManager.instance.GetSwordDamage();
+        //Debug.Log("Sword Damage Updated: " + SwordDamage);
     }
 
     private void OnSpell()
@@ -73,6 +83,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnMelee()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         if (timer >= meleeCoolDown && !isAttacking)
         {
             meleeAttack();
@@ -125,7 +136,7 @@ public class PlayerAttack : MonoBehaviour
         Collider[] enemies = Physics.OverlapSphere(MeleePoint.position, MeleeRange, enemyLayers);
         foreach (Collider enemy in enemies)
         {
-            enemy.GetComponent<enemyHealth>().TakeDamage(20);
+            enemy.GetComponent<enemyHealth>().TakeDamage(SwordDamage);
         }
         
     }

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd620278bb6ec14686897f0fd32f8e0, type: 3}
+  m_Name: KerisLuk3
+  m_EditorClassIdentifier: Assembly-CSharp::Items
+  ID: 2
+  ItemSprite: {fileID: 21300000, guid: bc1234dbea2a49a4e89f549b1f70d2ed, type: 3}
+  ItemPrefab: {fileID: 8565959256644179792, guid: e945b1c26a3db08468e20e0ea7e4f302, type: 3}
+  value: 30

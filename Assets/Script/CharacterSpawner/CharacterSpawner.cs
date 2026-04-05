@@ -1,5 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using Unity.Cinemachine;
+using System.Collections;
 
 public class CharacterSpawner : MonoBehaviour
 {
@@ -10,11 +11,14 @@ public class CharacterSpawner : MonoBehaviour
     {
         int selectedCharacter = PlayerPrefs.GetInt("SelectedCharacter");
 
+
         GameObject player = Instantiate(
             characterPrefabs[selectedCharacter],
             transform.position,
             transform.rotation
         );
+
+        
 
         // find the CameraFollow object inside the player
         Transform cameraTarget = player.transform.Find("CameraFollow");
@@ -26,5 +30,19 @@ public class CharacterSpawner : MonoBehaviour
         // assign camera to movement script
         PlayerMovement movement = player.GetComponent<PlayerMovement>();
         movement.SetCamera(Camera.main.transform);
+
+        
+
+
+        StartCoroutine(DelayedInventorySetup(player));
+    }
+    IEnumerator DelayedInventorySetup(GameObject player)
+    {
+        yield return null; // wait 1 frame
+        yield return new WaitForSeconds(0.2f); // small delay
+
+        InventoryManager.instance.SetPlayer(player);
+
+        InventoryManager.instance.InitializeAfterSpawn();
     }
 }

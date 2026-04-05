@@ -50,4 +50,10 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("CutScene");
     }
+
+    public void ContinueGame()
+    {
+        PlayerPrefs.SetInt("IsNewGame", 0);
+        SceneManager.LoadScene("GameScene");
+    }
 }
