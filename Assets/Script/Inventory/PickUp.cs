@@ -10,8 +10,7 @@ public class PickUp : MonoBehaviour
         {
             // add the item to the player's inventory
             InventoryManager.instance.AddItem(item);
-            //InventoryManager.instance.ShowItems();
-            //InventoryManager.instance.Save();
+            
             Destroy(gameObject);
         }
     }

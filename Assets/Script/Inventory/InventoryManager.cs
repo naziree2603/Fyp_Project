@@ -19,6 +19,7 @@ public class InventoryManager : MonoBehaviour
     public Transform swordPlace, shieldPlace;
 
     private bool isNewGameSession = false;
+    private bool hasInitialized = false;
 
     private GameObject EquipedSword;
     private GameObject EquipedShield;
@@ -105,10 +106,7 @@ public class InventoryManager : MonoBehaviour
 
 
 
-        // 🔥 USE THIS INSTEAD OF .Find("long path")
-        //swordPlace = FindDeepChild(Player.transform, "SwordPlace");
-        //shieldPlace = FindDeepChild(Player.transform, "ShieldPlace");
-
+        
         EquipPoint[] points = Player.GetComponentsInChildren<EquipPoint>();
 
         foreach (EquipPoint p in points)
@@ -122,34 +120,35 @@ public class InventoryManager : MonoBehaviour
 
 
         // 🔥 CHECK NEW GAME OR CONTINUE
-        int isNewGame = PlayerPrefs.GetInt("IsNewGame", 0);
-
-
-        if (isNewGame == 1)
+        // 🔥 IMPORTANT: only run ONCE
+        if (!hasInitialized)
         {
-            Debug.Log("NEW GAME → Reset Inventory");
+            hasInitialized = true;
 
-            CollectedItems.Clear();
-            EquipedSwordID = -1;
-            EquipedShieldID = -1;
+            int isNewGame = PlayerPrefs.GetInt("IsNewGame", 0);
 
-            isNewGameSession = true;
-
-            // 🔥 DELETE OLD SAVE FILE
-            string path = Path.Combine(Application.persistentDataPath, InventoryFilePath);
-            if (File.Exists(path))
+            if (isNewGame == 1)
             {
-                File.Delete(path);
+                Debug.Log("NEW GAME → Reset Inventory");
+
+                CollectedItems.Clear();
+                EquipedSwordID = -1;
+                EquipedShieldID = -1;
+
+                string path = Path.Combine(Application.persistentDataPath, InventoryFilePath);
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+
+                PlayerPrefs.SetInt("IsNewGame", 0);
             }
-
-
-            PlayerPrefs.SetInt("IsNewGame", 0); // reset flag
+            else
+            {
+                Load();
+            }
         }
-        if (isNewGame == 0)
-        {
-            Load(); // ONLY HERE
-        }
-        
+
 
 
     }
@@ -163,13 +162,10 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(Items item)
     {
         CollectedItems.Add(item);
-        
+
         Save();
 
-        if (Inventory != null && Inventory.activeInHierarchy)
-        {
-            ShowItems();
-        }
+        ShowItems(); // 🔥 ALWAYS CALL
 
     }
 

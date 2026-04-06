@@ -51,6 +51,15 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("CutScene");
     }
 
+    public void NewGame()
+    {
+        Debug.Log("Starting NEW GAME");
+
+        PlayerPrefs.SetInt("IsNewGame", 1);
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene("CutScene");
+    }
     public void ContinueGame()
     {
         PlayerPrefs.SetInt("IsNewGame", 0);
