@@ -46,10 +46,7 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void StartCutScene()
-    {
-        SceneManager.LoadScene("CutScene");
-    }
+
 
     public void NewGame()
     {
