@@ -17,3 +17,5 @@ MonoBehaviour:
   ItemPrefab: {fileID: 2340228925385479264, guid: 37ffc4cba1dafaf45a9534a21b755bcb, type: 3}
   value: 10
   itemType: 1
+  rarity: 1
+  groundedPrefab: {fileID: 8207648430285107855, guid: dc0be7ecc14aace4a813c5b7d9bd0abe, type: 3}

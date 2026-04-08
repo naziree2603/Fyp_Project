@@ -464,6 +464,54 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    
 
+
+
+    public List<Items> GetRandomLoots()
+    {
+        float roll = Random.value;
+
+        ItemRarity selectedRarity;
+
+        if (roll < 0.6)//60%
+
+            selectedRarity = ItemRarity.Uncommon;
+
+        else if (roll < 0.9)//30%
+
+            selectedRarity = ItemRarity.Rare;
+
+        else//10%
+
+            selectedRarity = ItemRarity.Epic;
+
+        Items[] allItems = Resources.LoadAll<Items>("Items");
+
+        List<Items> filtered = new List<Items>();
+
+        foreach (var item in allItems)
+        {
+            if (item.rarity == selectedRarity)
+                filtered.Add(item);
+            
+        }
+
+        if (filtered.Count == 0) return null;
+
+        //return filtered [Random.Range(0, filtered.Count)];
+
+        int lootCount = Random.Range(1, 4); // 
+
+        List<Items> droppedLoot = new List<Items>();
+
+        for (int i = 0; i < lootCount; i++)
+        {
+            if (filtered.Count == 0) break;
+
+            int index = Random.Range(0, filtered.Count);
+            droppedLoot.Add(filtered[index]);
+        }
+
+        return droppedLoot;
+    }
 }

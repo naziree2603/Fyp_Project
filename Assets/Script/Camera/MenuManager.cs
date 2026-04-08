@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
@@ -62,4 +62,6 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.SetInt("IsNewGame", 0);
         SceneManager.LoadScene("GameScene");
     }
+
+    
 }

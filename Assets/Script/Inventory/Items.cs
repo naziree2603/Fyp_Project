@@ -11,6 +11,8 @@ public class Items : ScriptableObject
     public GameObject ItemPrefab;
     public int value;
     public ItemType itemType;
+    public ItemRarity rarity;
+    public GameObject groundedPrefab;
 }
 
 public enum ItemType
@@ -18,3 +20,11 @@ public enum ItemType
     Sword,
     Shield
 }   
+
+public enum ItemRarity
+{
+    Common,
+    Uncommon,
+    Rare,
+    Epic,
+}

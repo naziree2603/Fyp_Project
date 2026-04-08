@@ -16,3 +16,6 @@ MonoBehaviour:
   ItemSprite: {fileID: 21300000, guid: 7377c5482098b5c4287fde643e687d65, type: 3}
   ItemPrefab: {fileID: 3398273573981704719, guid: 8395c97decaed594fb3c05321fa7ff70, type: 3}
   value: 15
+  itemType: 0
+  rarity: 1
+  groundedPrefab: {fileID: 3092122589575032241, guid: 96bd97d21f8071d4f938a496c5ca1230, type: 3}

@@ -73,6 +73,28 @@ public class enemyHealth : MonoBehaviour
         PlaySounds(deathSounds);
         enemyHealthManager.HideHealthBar();
         anim.SetTrigger("Death");
+
+        // drop loot
+        List<Items> droppedLoot = InventoryManager.instance.GetRandomLoots();
+
+        float xSpace = 1f;
+
+        if(droppedLoot != null)
+        {
+            //foreach (var item in droppedLoot)
+            //{
+            //    Instantiate(item.groundedPrefab, transform.position, Quaternion.identity);
+            //}
+
+            for (int i = 0; i  < droppedLoot.Count; i++)
+            {
+                Vector3 spawnPos = transform.position + new Vector3(xSpace * i, 0, Random.Range(-2, 2));
+                Instantiate(droppedLoot[i].groundedPrefab, spawnPos, Quaternion.identity);
+            }
+
+        }
+
+
         Invoke("DisableEnemy", 5f); // Delay to allow death animation to play
     }
 

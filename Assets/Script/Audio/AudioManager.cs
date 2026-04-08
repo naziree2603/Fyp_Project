@@ -6,6 +6,18 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] Slider soundSlider;
     [SerializeField] AudioMixer masterMixter;
+    private int Length;
+
+    void Awake()
+    {
+        if (FindFirstObjectByType<AudioManager>().Length > 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void Start()
     {

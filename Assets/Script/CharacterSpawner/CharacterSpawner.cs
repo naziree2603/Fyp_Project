@@ -46,3 +46,4 @@ public class CharacterSpawner : MonoBehaviour
         InventoryManager.instance.InitializeAfterSpawn();
     }
 }
+

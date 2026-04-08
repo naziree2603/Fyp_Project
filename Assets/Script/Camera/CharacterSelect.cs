@@ -36,12 +36,13 @@ public class CharacterSelect : MonoBehaviour
         }
     }
 
-    public void SelectCharacter()
+    public void ConfirmCharacter()
     {
+        Debug.Log("Selected Character: " + currentCharacter);
+
         PlayerPrefs.SetInt("SelectedCharacter", currentCharacter);
-
-        PlayerPrefs.SetInt("IsNewGame", 1);
-
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+        PlayerPrefs.Save();
     }
+
+
 }

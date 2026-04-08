@@ -1412,7 +1412,7 @@ MonoBehaviour:
   meleeSound3: {fileID: 8300000, guid: dc6308b28c16ded4b8b3c91390475b49, type: 3}
   meleeSound4: {fileID: 8300000, guid: 76bff7a810ec07b498ca12348eb80dfc, type: 3}
   meleeCoolDown: 0.4
-  MeleePoint: {fileID: 0}
+  MeleePoint: {fileID: 4294448593584368319}
   MeleeRange: 0.7
   enemyLayers:
     serializedVersion: 2
