@@ -31,7 +31,11 @@ public class CharacterSpawner : MonoBehaviour
         PlayerMovement movement = player.GetComponent<PlayerMovement>();
         movement.SetCamera(Camera.main.transform);
 
-        
+        MiniMapFollow minimap = FindFirstObjectByType<MiniMapFollow>();
+        if (minimap != null)
+        {
+            minimap.SetPlayer(player.transform);
+        }
 
 
         StartCoroutine(DelayedInventorySetup(player));

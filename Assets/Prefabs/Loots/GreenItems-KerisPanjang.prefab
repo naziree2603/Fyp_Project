@@ -4901,6 +4901,7 @@ GameObject:
   - component: {fileID: 8828319096239627460}
   - component: {fileID: 5483811686240535385}
   - component: {fileID: 1343446402381418564}
+  - component: {fileID: 356487315413660299}
   m_Layer: 0
   m_Name: GreenItems-KerisPanjang
   m_TagString: Untagged
@@ -4944,8 +4945,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.07, y: 0.31, z: 0.12}
-  m_Center: {x: 0, y: 0.34, z: 0}
+  m_Size: {x: 0.17, y: 0.65, z: 0.11}
+  m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!114 &1343446402381418564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4959,6 +4960,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
   item: {fileID: 11400000, guid: cedd06c413660964abd6cac6eb8f15cb, type: 2}
+--- !u!65 &356487315413660299
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3092122589575032241}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: -0.03, y: 0.28, z: 0.12}
+  m_Center: {x: 0, y: 0.23, z: 0}
 --- !u!1 &4217997222043790261
 GameObject:
   m_ObjectHideFlags: 0

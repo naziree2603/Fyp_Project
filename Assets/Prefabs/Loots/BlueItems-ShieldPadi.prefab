@@ -9804,6 +9804,7 @@ GameObject:
   - component: {fileID: 7051555782991781476}
   - component: {fileID: 4988254112895761952}
   - component: {fileID: 5795928107797802435}
+  - component: {fileID: 8232545210626413825}
   m_Layer: 0
   m_Name: BlueItems-ShieldPadi
   m_TagString: Untagged
@@ -9847,7 +9848,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.07, y: 0.320732, z: 0.12}
+  m_Size: {x: 0.22, y: 0.62, z: 0.46}
   m_Center: {x: 0, y: 0.17945266, z: 0}
 --- !u!114 &5795928107797802435
 MonoBehaviour:
@@ -9862,6 +9863,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
   item: {fileID: 11400000, guid: cdb07d3a7af9ad14a8405a3d62a28f48, type: 2}
+--- !u!65 &8232545210626413825
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2748506015253683937}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.09, y: 0.22, z: 0.16}
+  m_Center: {x: 0, y: 0.11, z: 0}
 --- !u!1 &3785687569188710895
 GameObject:
   m_ObjectHideFlags: 0

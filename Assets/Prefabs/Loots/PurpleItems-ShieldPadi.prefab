@@ -19614,6 +19614,7 @@ GameObject:
   - component: {fileID: 3473852203370530771}
   - component: {fileID: 3640577678892664929}
   - component: {fileID: 6937805831165440701}
+  - component: {fileID: 4331702076038113753}
   m_Layer: 0
   m_Name: PurpleItems-ShieldPadi
   m_TagString: Untagged
@@ -19657,7 +19658,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.07, y: 0.2572493, z: 0.12}
+  m_Size: {x: 0.13, y: 0.35, z: 0.3}
   m_Center: {x: 0, y: 0.23595232, z: 0}
 --- !u!114 &6937805831165440701
 MonoBehaviour:
@@ -19672,3 +19673,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
   item: {fileID: 11400000, guid: e60ce7e07c060ca45b586ae0af14ae86, type: 2}
+--- !u!65 &4331702076038113753
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178740841863387372}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: -0.03, y: 0.37, z: 0.12}
+  m_Center: {x: 0, y: 0.19, z: 0}

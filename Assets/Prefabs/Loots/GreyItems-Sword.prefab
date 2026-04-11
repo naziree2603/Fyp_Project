@@ -9804,6 +9804,7 @@ GameObject:
   - component: {fileID: 5856950054813189887}
   - component: {fileID: 6822851217680132120}
   - component: {fileID: 34889152659595825}
+  - component: {fileID: 8820335506924078710}
   m_Layer: 0
   m_Name: GreyItems-Sword
   m_TagString: Untagged
@@ -9847,8 +9848,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.07, y: 0.3565997, z: 0.12}
-  m_Center: {x: 0, y: 0.21480581, z: 0}
+  m_Size: {x: 0.18, y: 0.65, z: 0.24}
+  m_Center: {x: 0, y: 0.38, z: 0}
 --- !u!114 &34889152659595825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9862,6 +9863,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
   item: {fileID: 11400000, guid: 1b901733e85486a429e1dce17327add7, type: 2}
+--- !u!65 &8820335506924078710
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2588491366843085391}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: -0.03, y: 0.28, z: 0.12}
+  m_Center: {x: 0, y: 0.22, z: 0}
 --- !u!1 &3687246149733759106
 GameObject:
   m_ObjectHideFlags: 0
