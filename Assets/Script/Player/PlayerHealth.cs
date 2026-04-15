@@ -52,6 +52,16 @@ public class PlayerHealth : MonoBehaviour
         //disable player movement
     }
 
+    public void Heal(int amount)
+    {
+        if (!isAlive) return;
+
+        CurrentHealth = Mathf.Min(CurrentHealth + amount, maxHealth);
+        HealthSlider.value = CurrentHealth;
+
+        Debug.Log("Player healed: +" + amount);
+    }
+
     // Update is called once per frame
     void Update()
     {

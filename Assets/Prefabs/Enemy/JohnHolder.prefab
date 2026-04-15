@@ -660,7 +660,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b6b254550e5aeaf4c9bf3292772277a8, type: 3}
   swordSounds: {fileID: 0}
   magicSounds: {fileID: 8300000, guid: 00c5856008ba871429c1343da4af0956, type: 3}
-  CoolDownSound: 6
+  CoolDownSound: 30
 --- !u!195 &886485921812479477
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -738,11 +738,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6853dc783baca1b438be4aff56770daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::enemyHealth
+  QuestID: 0
   maxHealth: 60
   currentHealth: 0
+  healAmount: 20
   IsAlive: 1
   deathSounds:
-  - {fileID: 8300000, guid: 24f7b69e7f070d0429cd158ce3ad6768, type: 3}
+  - {fileID: 8300000, guid: bf6d08f6759db4a4d88dbb77901cc3b3, type: 3}
   CoolDownSound: 6
 --- !u!82 &8151183604873037472
 AudioSource:
@@ -757,7 +759,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

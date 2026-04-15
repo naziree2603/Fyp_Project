@@ -8,6 +8,7 @@ public class enemyHealth : MonoBehaviour
     public int QuestID;
     public int maxHealth;
     public int currentHealth;
+    [SerializeField] private int healAmount = 20;
     private Animator anim;
     public bool IsAlive = true;
     private float hitCooldown = 0.5f;
@@ -67,6 +68,13 @@ public class enemyHealth : MonoBehaviour
     private void EnemyDeath()
     {
         IsAlive = false;
+
+        PlayerHealth player = FindFirstObjectByType<PlayerHealth>();
+        if (player != null)
+        {
+            player.Heal(healAmount);
+        }
+
 
         QuestManager.Instance.UpdateQuestProgress(QuestID);
 
