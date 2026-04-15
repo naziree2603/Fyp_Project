@@ -36,6 +36,14 @@ public class CharacterSpawner : MonoBehaviour
         {
             minimap.SetPlayer(player.transform);
         }
+        MarkerManager.Instance.SetPlayer(player.transform);
+
+        QuestMarker[] markers = FindObjectsByType<QuestMarker>(FindObjectsSortMode.None);
+
+        foreach (var marker in markers)
+        {
+            marker.SetPlayer(player.transform);
+        }
 
 
         StartCoroutine(DelayedInventorySetup(player));
@@ -49,5 +57,7 @@ public class CharacterSpawner : MonoBehaviour
 
         InventoryManager.instance.InitializeAfterSpawn();
     }
+
+    
 }
 

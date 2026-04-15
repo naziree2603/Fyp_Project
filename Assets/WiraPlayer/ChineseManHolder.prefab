@@ -1124,6 +1124,7 @@ GameObject:
   - component: {fileID: 3188887254219934355}
   - component: {fileID: 4706607426911779077}
   - component: {fileID: 508343874800880175}
+  - component: {fileID: 5845371798067206930}
   m_Layer: 7
   m_Name: ChineseManHolder
   m_TagString: Player
@@ -1380,6 +1381,18 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.01, z: 0}
+--- !u!114 &5845371798067206930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3319500087114612756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce013325ca9ac44fad1111c65f63d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockCursor
 --- !u!1 &3359305580767257339
 GameObject:
   m_ObjectHideFlags: 0

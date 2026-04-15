@@ -2373,6 +2373,7 @@ GameObject:
   - component: {fileID: 8276742887249365205}
   - component: {fileID: 3005501927746899832}
   - component: {fileID: 4826867983314217393}
+  - component: {fileID: 1089901865105008773}
   m_Layer: 7
   m_Name: MalayGirlHolder
   m_TagString: Player
@@ -2649,6 +2650,18 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &1089901865105008773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8910095382758768699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce013325ca9ac44fad1111c65f63d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LockCursor
 --- !u!1 &8993258289096521011
 GameObject:
   m_ObjectHideFlags: 0

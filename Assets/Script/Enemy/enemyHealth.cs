@@ -5,6 +5,7 @@ using UnityEngine.Timeline;
 
 public class enemyHealth : MonoBehaviour
 {
+    public int QuestID;
     public int maxHealth;
     public int currentHealth;
     private Animator anim;
@@ -19,6 +20,8 @@ public class enemyHealth : MonoBehaviour
     
     private float soundTimer;
     [SerializeField] private float CoolDownSound = 3f;
+
+    
 
     private void Start()
     {
@@ -64,7 +67,9 @@ public class enemyHealth : MonoBehaviour
     private void EnemyDeath()
     {
         IsAlive = false;
-        
+
+        QuestManager.Instance.UpdateQuestProgress(QuestID);
+
         if (hideHealthBarCoroutine != null)
         {
             StopCoroutine(HideHealthBarDelay());

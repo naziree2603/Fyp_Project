@@ -45,6 +45,10 @@ public class InventoryManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        else
+        {
+            Destroy(gameObject); // 🔥 THIS FIXES EVERYTHING
+        }
 
 
     }
@@ -61,27 +65,36 @@ public class InventoryManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Scene Loaded → Reconnecting UI");
+        if (scene.name == "GameScene") // 🔥 CHANGE to your scene name
+        {
+            StartCoroutine(DelayedUIReconnect());
+        }
+    }
+
+    IEnumerator DelayedUIReconnect() 
+    {
+        yield return new WaitForSeconds(0.2f);
         FindUI();
+
+
     }
 
 
 
-    void FindUI()
+    public void FindUI()
     {
-        UIReferences ui = FindFirstObjectByType<UIReferences>();
+        UIReferences ui = FindFirstObjectByType<UIReferences>(FindObjectsInactive.Include);
 
-        if (ui != null)
+        if (ui == null)
         {
-            Container = ui.content;
-            Inventory = ui.bg;
+            Debug.LogWarning("UIReferences not found in this scene (OK if not GameScene)");
+            return;
+        }
 
-            Debug.Log("UI Connected Successfully");
-        }
-        else
-        {
-            Debug.LogError("UIReferences NOT FOUND!");
-        }
+        Container = ui.content;
+        Inventory = ui.bg;
+
+        Debug.Log("UI Connected Successfully");
     }
 
     Transform FindDeepChild(Transform parent, string name)
@@ -243,6 +256,26 @@ public class InventoryManager : MonoBehaviour
         Save();
     }
 
+    public void ToggleInventory()
+    {
+        if (Inventory == null) return;
+
+        if (Inventory.activeSelf)
+        {
+            CloseInventory();
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            OpenInventory();
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
     public void CloseInventory()
     {
         if (Inventory != null)
@@ -258,7 +291,8 @@ public class InventoryManager : MonoBehaviour
         if (Inventory == null || Container == null)
         {
             Debug.LogWarning("UI not ready");
-            return;
+            FindUI();
+
         }
 
         Inventory.SetActive(true);
@@ -568,5 +602,13 @@ public class InventoryManager : MonoBehaviour
         }
 
         return droppedLoot;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            ToggleInventory();
+        }
     }
 }

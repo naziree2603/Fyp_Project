@@ -60,6 +60,7 @@ public class MenuManager : MonoBehaviour
     public void ContinueGame()
     {
         PlayerPrefs.SetInt("IsNewGame", 0);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("GameScene");
     }
 
