@@ -20,7 +20,7 @@ public class IntroLogo : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
 
         // Fade out
         while (logo.alpha > 0)
