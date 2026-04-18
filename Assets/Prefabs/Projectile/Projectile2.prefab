@@ -9891,5 +9891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3080707bc1ee2874c8aee7b63a262b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellPlayer
-  speed: 10
+  speed: 15
   hitEffect: {fileID: 1490425815880213455, guid: 7b861f1450a744a468dfc58be970f7f0, type: 3}
+  damage: 30

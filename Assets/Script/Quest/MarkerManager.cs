@@ -24,3 +24,5 @@ public class MarkerManager : MonoBehaviour
         Instance = this;
     }
 }
+
+

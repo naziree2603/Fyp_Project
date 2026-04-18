@@ -702,8 +702,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6853dc783baca1b438be4aff56770daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::enemyHealth
+  QuestID: 0
   maxHealth: 100
   currentHealth: 0
+  healAmount: 20
   IsAlive: 1
   deathSounds:
   - {fileID: 8300000, guid: 931442b4254faac4f8f2bc2cd66c79c0, type: 3}

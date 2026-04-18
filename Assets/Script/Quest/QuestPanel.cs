@@ -65,7 +65,7 @@ public class QuestPanel : MonoBehaviour
             //register the quest in the manager
             QuestManager.Instance.RegisterQuest(questID, questDescription, reqKills, questType);
             //create the quest instance after registering
-            quest = new Quests(questID, questDescription, reqKills, questType);
+            quest = QuestManager.Instance.GetQuest(questID);
         }
     }
 

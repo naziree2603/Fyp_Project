@@ -13,6 +13,19 @@ public class QuestMarker : MonoBehaviour
     private RectTransform minimapMarker;
     private RectTransform navbarMarker;
 
+    public static QuestMarker instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            gameObject.SetActive(false); ; // prevent duplicate
+            return;
+        }
+
+        instance = this;
+    }
+
     public void SetPlayer(Transform target)
     {
         Player = target;

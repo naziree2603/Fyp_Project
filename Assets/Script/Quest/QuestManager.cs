@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,7 +41,12 @@ public class QuestManager : MonoBehaviour
         if(quests.TryGetValue(questID, out Quests quest))
         {
             if(quest.type == Quests.questType.trigger)
+            {
+                quest.isComplete = true; // 🔥 THIS IS MISSING
+
+                OnQuestProgressedChange?.Invoke(questID);
                 OnQuestCompleted?.Invoke(questID);
+            }
         }
     }
 

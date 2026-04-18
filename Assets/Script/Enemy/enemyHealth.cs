@@ -22,7 +22,10 @@ public class enemyHealth : MonoBehaviour
     private float soundTimer;
     [SerializeField] private float CoolDownSound = 3f;
 
-    
+    public VillagerState villager;
+
+    public EnemyManager manager;
+
 
     private void Start()
     {
@@ -107,6 +110,15 @@ public class enemyHealth : MonoBehaviour
 
         }
 
+        if (manager != null)
+        {
+            manager.EnemyDied();
+        }
+
+        if (villager != null)
+        {
+            villager.SetSafe();
+        }
 
         Invoke("DisableEnemy", 5f); // Delay to allow death animation to play
     }
