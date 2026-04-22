@@ -12,6 +12,9 @@ public class EndCutsceneUI : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu"); // change name if needed
     }
