@@ -4,7 +4,6 @@ using System.Runtime.InteropServices;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.InputSystem.Android;
 using Random = UnityEngine.Random;
 
 public class EnemyAi : MonoBehaviour

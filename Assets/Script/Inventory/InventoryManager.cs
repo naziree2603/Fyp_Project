@@ -6,7 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.GraphView.GraphView;
+
 
 public class InventoryManager : MonoBehaviour
 {
@@ -19,7 +19,7 @@ public class InventoryManager : MonoBehaviour
     public Transform swordPlace, shieldPlace;
 
     private bool isNewGameSession = false;
-    private bool hasInitialized = false;
+    
 
     private GameObject EquipedSword;
     private GameObject EquipedShield;
@@ -132,38 +132,48 @@ public class InventoryManager : MonoBehaviour
         }
 
 
-        // 🔥 CHECK NEW GAME OR CONTINUE
-        // 🔥 IMPORTANT: only run ONCE
-        if (!hasInitialized)
+        int isNewGame = PlayerPrefs.GetInt("IsNewGame", 0);
+
+        if (isNewGame == 1)
         {
-            hasInitialized = true;
+            Debug.Log("NEW GAME → Reset Inventory");
 
-            int isNewGame = PlayerPrefs.GetInt("IsNewGame", 0);
+            CollectedItems.Clear();
+            EquipedSwordID = -1;
+            EquipedShieldID = -1;
 
-            if (isNewGame == 1)
+            string path = Path.Combine(Application.persistentDataPath, InventoryFilePath);
+            if (File.Exists(path))
             {
-                Debug.Log("NEW GAME → Reset Inventory");
-
-                CollectedItems.Clear();
-                EquipedSwordID = -1;
-                EquipedShieldID = -1;
-
-                string path = Path.Combine(Application.persistentDataPath, InventoryFilePath);
-                if (File.Exists(path))
-                {
-                    File.Delete(path);
-                }
-
-                PlayerPrefs.SetInt("IsNewGame", 0);
+                File.Delete(path);
             }
-            else
-            {
-                Load();
-            }
+
+            PlayerPrefs.SetInt("IsNewGame", 0);
+
+            HardReset();
+
+            ShowItems(); // 🔥 IMPORTANT
+        }
+        else
+        {
+            Load();
         }
 
 
 
+
+    }
+
+    public void HardReset()
+    {
+        CollectedItems.Clear();
+        EquipedSwordID = -1;
+        EquipedShieldID = -1;
+
+        if (EquipedSword != null) Destroy(EquipedSword);
+        if (EquipedShield != null) Destroy(EquipedShield);
+
+        ShowItems();
     }
 
     private void Start()
