@@ -35,9 +35,9 @@ public class QuestMarker : MonoBehaviour
     {
         var mgr = MarkerManager.Instance;
         
-        //minimapMarker = Instantiate(mgr.minimapPrefab, mgr.minimapPanel);
+        
         navbarMarker = Instantiate(mgr.navbarPrefab, mgr.navbarPanel);
-       // minimapPanel = mgr.minimapPanel;
+       
         navbarPanel = mgr.navbarPanel;
     }
 
@@ -54,16 +54,7 @@ public class QuestMarker : MonoBehaviour
         // ignore height
         offset.y = 0;
 
-        // scale world → minimap
-        //float mapScale = 0.05f; // adjust this!
-
-        //minimap
-        //Vector2 minimapPos = new Vector2(offset.x, offset.z) * mapScale;
-
-        //// clamp inside map
-        //minimapPos = Vector2.ClampMagnitude(minimapPos, minimapPanel.rect.width / 2f - 20f);
-
-        //minimapMarker.anchoredPosition = minimapPos;
+       
 
         //navbar
         float angle = Vector3.SignedAngle(Player.forward, offset, Vector3.up);
@@ -74,7 +65,7 @@ public class QuestMarker : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(minimapMarker != null) Destroy(minimapMarker.gameObject);
+        
         if(navbarMarker != null) Destroy(navbarMarker.gameObject);
     }
 }

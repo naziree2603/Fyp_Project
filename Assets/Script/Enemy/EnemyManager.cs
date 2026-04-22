@@ -1,20 +1,21 @@
-using UnityEngine;
-using UnityEngine.Playables;
+﻿using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public int enemyCount;
-    public VillagerState villager;
-    public PlayableDirector director;
+    public GameObject[] enemies; // drag enemies here
+    public GameObject cutsceneTrigger;
 
-    public void EnemyDied()
+    public void CheckAllDead()
     {
-        enemyCount--;
-
-        if (enemyCount <= 0)
+        foreach (GameObject enemy in enemies)
         {
-            villager.SetSafe();   // villager relax
-            director.Play();      // play timeline (optional)
+            if (enemy != null) // still alive
+                return;
         }
+
+        Debug.Log("All enemies dead!");
+
+        if (cutsceneTrigger != null)
+            cutsceneTrigger.SetActive(true);
     }
 }

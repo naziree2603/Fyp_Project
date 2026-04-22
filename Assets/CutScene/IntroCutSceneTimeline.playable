@@ -160,6 +160,22 @@ MonoBehaviour:
     - {fileID: 4791073115661297183}
     - {fileID: 1032833137805012166}
     - {fileID: -1938193494762475}
+--- !u!114 &-5438669356368427497
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
+  m_Time: 23.73576456780235
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: d833b264d2cc7c54cb9b5117400499ed, type: 2}
 --- !u!114 &-5208087233807904685
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1318,6 +1334,7 @@ MonoBehaviour:
   - {fileID: 739604676306597543}
   - {fileID: 560108696343799723}
   - {fileID: -5836441955737822909}
+  - {fileID: 6525718016509674224}
   m_FixedDuration: 35.61666666666667
   m_EditorSettings:
     m_Framerate: 60
@@ -2568,6 +2585,30 @@ MonoBehaviour:
   m_bufferingTime: 0.1
   m_ClipProperties:
     volume: 1
+--- !u!114 &6525718016509674224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46e36075dd1c124a8422c228e75e1fb, type: 3}
+  m_Name: Signal Track (1)
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalTrack
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects:
+    - {fileID: -5438669356368427497}
 --- !u!114 &7521531477598765036
 MonoBehaviour:
   m_ObjectHideFlags: 1

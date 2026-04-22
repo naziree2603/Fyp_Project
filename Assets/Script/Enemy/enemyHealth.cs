@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Timeline;
@@ -22,9 +22,11 @@ public class enemyHealth : MonoBehaviour
     private float soundTimer;
     [SerializeField] private float CoolDownSound = 3f;
 
-    public VillagerState villager;
-
     public EnemyManager manager;
+
+    public GameObject nextTrigger;
+
+
 
 
     private void Start()
@@ -34,6 +36,8 @@ public class enemyHealth : MonoBehaviour
         IsAlive = true;
         enemyHealthManager = FindFirstObjectByType<EnemyHealthbarManager>();
         audio = GetComponent<AudioSource>();
+
+
     }
 
     public void TakeDamage(int damage)
@@ -110,18 +114,25 @@ public class enemyHealth : MonoBehaviour
 
         }
 
-        if (manager != null)
+        // ✨ ACTIVATE CUTSCENE TRIGGER IMMEDIATELY
+        if (nextTrigger != null)
         {
-            manager.EnemyDied();
+            nextTrigger.SetActive(true);
+            Debug.Log("Trigger activated!");
         }
 
-        if (villager != null)
+        // 👿 OR use manager (multi enemies)
+        if (manager != null)
         {
-            villager.SetSafe();
+            manager.CheckAllDead();
         }
+
+        GetComponent<Collider>().enabled = false;
 
         Invoke("DisableEnemy", 5f); // Delay to allow death animation to play
     }
+
+   
 
     private IEnumerator HideHealthBarDelay()
     {
@@ -133,6 +144,10 @@ public class enemyHealth : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    
+
+
 
 
 }

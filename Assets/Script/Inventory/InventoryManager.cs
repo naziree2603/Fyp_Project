@@ -505,22 +505,24 @@ public class InventoryManager : MonoBehaviour
     {
         float roll = Random.Range(0f, 100f);
 
-        // 60% no loot
-        if (roll < 60f)
+        // 0 → 20 = 20%
+        if (roll < 20f)
         {
-            return new List<Items>();
+            return new List<Items>(); // no loot
         }
 
         ItemRarity selectedRarity;
 
-        // remaining 40%
-        if (roll < 88f)          // 60 → 88 = 28%
+        // 20 → 70 = 50%
+        if (roll < 70f)
             selectedRarity = ItemRarity.Uncommon;
 
-        else if (roll < 100f - 4f) // 88 → 96 = 12%
+        // 70 → 90 = 20%
+        else if (roll < 90f)
             selectedRarity = ItemRarity.Rare;
 
-        else                       // 96 → 100 = 4%
+        // 90 → 100 = 10%
+        else
             selectedRarity = ItemRarity.Epic;
 
 

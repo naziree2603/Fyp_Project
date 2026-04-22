@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class QuestPanel : MonoBehaviour
@@ -6,10 +6,11 @@ public class QuestPanel : MonoBehaviour
     public int questID;
     public string questDescription;
     public int reqKills;
+
     public Text descText;
     public Image CheckedImage;
-    public GameObject uncheckedImage;
-    public GameObject nextQuestPeople;
+
+    public GameObject[] nextQuestPeople; // 🔥 MULTIPLE HOLDERS
     public GameObject nextQuestPanel;
 
     public Quests quest;
@@ -20,31 +21,33 @@ public class QuestPanel : MonoBehaviour
         if (descText == null)
             questDescription = descText.text;
 
-        //ensure the next quest panel is not initially active
-
-        if (nextQuestPanel != null && nextQuestPeople != null)
-        {
+        // disable next quest panel
+        if (nextQuestPanel != null)
             nextQuestPanel.SetActive(false);
-            nextQuestPeople.SetActive(false);
-        }
-            
+
+        // 🔥 FORCE disable ALL enemies at start (VERY IMPORTANT)
+        DisableAllNextQuestEnemies();
     }
 
     private void Start()
     {
         RegisterQuestIfNeeded();
         CheckedImage.gameObject.SetActive(false);
+
+        // 🔥 DOUBLE SAFETY (fix your bug)
+        DisableAllNextQuestEnemies();
     }
 
     private void OnEnable()
     {
         RegisterQuestIfNeeded();
 
-        if(quest == null)
-        
-        quest.isComplete = false;
+        if (quest != null)
+            quest.isComplete = false;
+
         QuestManager.OnQuestProgressedChange += HandleQuestProgressChange;
         QuestManager.OnQuestCompleted += HandleQuestComplete;
+
         UpdatePanel();
     }
 
@@ -54,17 +57,27 @@ public class QuestPanel : MonoBehaviour
         QuestManager.OnQuestCompleted -= HandleQuestComplete;
     }
 
+    // 🔥 CENTRAL FUNCTION (IMPORTANT)
+    private void DisableAllNextQuestEnemies()
+    {
+        if (nextQuestPeople == null) return;
+
+        foreach (GameObject obj in nextQuestPeople)
+        {
+            if (obj != null)
+                obj.SetActive(false);
+        }
+    }
+
     private void RegisterQuestIfNeeded()
     {
         if (QuestManager.Instance == null) return;
 
         quest = QuestManager.Instance.GetQuest(questID);
 
-        if(quest == null)
+        if (quest == null)
         {
-            //register the quest in the manager
             QuestManager.Instance.RegisterQuest(questID, questDescription, reqKills, questType);
-            //create the quest instance after registering
             quest = QuestManager.Instance.GetQuest(questID);
         }
     }
@@ -73,17 +86,33 @@ public class QuestPanel : MonoBehaviour
     {
         if (updateQuestID == questID)
         {
-            //update Panel
             UpdatePanel();
         }
     }
 
     private void HandleQuestComplete(int completedQuestID)
     {
-        if(completedQuestID == questID)
+        if (completedQuestID == questID)
         {
-            if(nextQuestPanel != null) nextQuestPanel.SetActive(true);
-            if(nextQuestPeople != null) nextQuestPeople.SetActive(true);
+            Debug.Log("Quest " + questID + " completed!");
+
+            // show next quest panel
+            if (nextQuestPanel != null)
+                nextQuestPanel.SetActive(true);
+
+            // 🔥 ACTIVATE ALL ENEMY HOLDERS
+            if (nextQuestPeople != null)
+            {
+                foreach (GameObject obj in nextQuestPeople)
+                {
+                    if (obj != null)
+                    {
+                        obj.SetActive(true);
+                        Debug.Log(obj.name + " activated");
+                    }
+                }
+            }
+
             CheckedImage.gameObject.SetActive(true);
             UpdatePanel();
         }
@@ -91,10 +120,9 @@ public class QuestPanel : MonoBehaviour
 
     public void UpdatePanel()
     {
-       if(quest != null)
+        if (quest != null)
         {
             descText.text = quest.description;
-            
         }
     }
 }

@@ -1,18 +1,40 @@
-using System.Security.Cryptography.X509Certificates;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 
+
 public class PlayerHealth : MonoBehaviour
 {
+    
     [SerializeField] private Slider HealthSlider;
     [SerializeField] private int maxHealth = 100;
+    private CharacterController controller;
     public int CurrentHealth;
     public bool isAlive = true;
 
+    public Transform respawnPoint;
+
     public int ShieldValue;
+
+    private Animator anim;
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
+        controller = GetComponent<CharacterController>();
+
+        if (respawnPoint == null)
+        {
+            GameObject obj = GameObject.FindWithTag("Respawn");
+            if (obj != null)
+            {
+                respawnPoint = obj.transform;
+            }
+            else
+            {
+                Debug.LogWarning("No Respawn point found!");
+            }
+        }
         HealthSlider.maxValue = maxHealth;
         CurrentHealth = maxHealth;
         HealthSlider.value = CurrentHealth;
@@ -49,7 +71,37 @@ public class PlayerHealth : MonoBehaviour
         HealthSlider.value = CurrentHealth;
         Debug.Log("Player Died");
         //play death animation
+        anim.SetTrigger("Death");
         //disable player movement
+        GetComponent<PlayerMovement>().enabled = false;
+
+        StartCoroutine(RespawnCoroutine());
+    }
+
+    IEnumerator RespawnCoroutine()
+    {
+        yield return new WaitForSeconds(5f); // match death animation
+
+        // disable controller before teleport (IMPORTANT)
+        if (controller != null) controller.enabled = false;
+
+        // teleport to respawn point
+        transform.position = respawnPoint.position;
+
+        // enable back
+        if (controller != null) controller.enabled = true;
+
+        // reset health
+        CurrentHealth = maxHealth;
+        HealthSlider.value = CurrentHealth;
+
+        // reset state
+        isAlive = true;
+
+        // 🎮 enable movement again
+        GetComponent<PlayerMovement>().enabled = true;
+
+        Debug.Log("Player Respawned");
     }
 
     public void Heal(int amount)
